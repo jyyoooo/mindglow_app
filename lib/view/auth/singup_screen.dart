@@ -60,9 +60,9 @@ class SignupPage extends StatelessWidget {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment
-                            .center, // Center the items horizontally
+                            .center, 
                         mainAxisAlignment: MainAxisAlignment
-                            .center, // Center the items vertically
+                            .center,
                         children: [
                           const SizedBox(height: 20),
                           const Text(
@@ -144,7 +144,7 @@ class SignupPage extends StatelessWidget {
                                 const SizedBox(height: 15),
                                 GestureDetector(
                                   onTap: () {
-                                    Navigator.of(context).push(
+                                    Navigator.of(context).pushReplacement(
                                         MaterialPageRoute(
                                             builder: (context) =>
                                                 const LoginPage()));

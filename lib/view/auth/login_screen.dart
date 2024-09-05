@@ -21,8 +21,7 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  String? _emailError;
-  String? _passwordError;
+ 
 
   @override
   void dispose() {
@@ -54,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
           BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
             if (state is Authenticated) {
               if (FirebaseAuth.instance.currentUser?.uid == null) {
-                Navigator.push(context,
+                Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (context) => const LoginPage()));
               } else {}
               WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -140,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
                           SizedBox(height: screenHeight * 0.02),
                           GestureDetector(
                             onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).pushReplacement(MaterialPageRoute(
                                   builder: (context) => SignupPage()));
                             },
                             child: const Row(

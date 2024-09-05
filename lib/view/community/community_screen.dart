@@ -116,12 +116,12 @@ class _CommunityScreenState extends State<CommunityScreen> {
                   ),
                 );
               } else if (state is APIError) {
-                return SliverFillRemaining(
-                  child: Center(child: Text(state.message)),
+                return const SliverFillRemaining(
+                  child: Center(child: Text('Something went wrong')),
                 );
               }
               return const SliverFillRemaining(
-                child: Center(child: Text('No comments available.')),
+                child: Center(child: Text('No Data available.')),
               );
             },
           ),
@@ -132,6 +132,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
 
   SliverAppBar _buildAppBar(BuildContext context) {
     return SliverAppBar(
+      leading: const SizedBox(),
       stretch: true,
       expandedHeight: 100,
       floating: false,

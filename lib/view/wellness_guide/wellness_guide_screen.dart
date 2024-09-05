@@ -69,6 +69,7 @@ class _WellnessGuideState extends State<WellnessGuide> {
 
   SliverAppBar _buildAppBar(BuildContext context) {
     return SliverAppBar(
+      leading: const SizedBox(),
       stretch: true,
       expandedHeight: 100,
       floating: false,
